@@ -1,6 +1,6 @@
 - Algoritmos y Estructuras de Datos en Haskell
 
-📂 Estructura del Proyecto
+Estructura del Proyecto:
 
 El código está organizado en 4 módulos principales según su propósito:
 
