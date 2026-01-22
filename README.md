@@ -8,9 +8,9 @@ El código está organizado en 4 módulos principales según su propósito:
 
     - Implementación de Tipos de Datos Abstractos (TDA) genéricos y reutilizables.
 
-    - Pila.hs: Implementación de Stack (LIFO).
+    - Pila.hs: Implementación de Stack.
 
-    - Cola.hs: Implementación de Queue (FIFO).
+    - Cola.hs: Implementación de Queue.
 
     - ArbolBinario.hs: Árbol Binario de Búsqueda (BST) completo, incluyendo algoritmos de búsqueda, cálculo de altura y recorridos (InOrder, PreOrder, PostOrder).
 
