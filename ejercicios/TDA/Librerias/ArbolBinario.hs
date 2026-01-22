@@ -27,11 +27,11 @@ esVacio _    = False
 insertar :: Ord a => a -> Arbol a -> Arbol a
 insertar x Hoja = Nodo x Hoja Hoja
 insertar x (Nodo y izq der) 
-    | x == y = Nodo y izq der              -- No duplicados
-    | x > y  = Nodo y izq (insertar x der) -- Mayores a la derecha
-    | otherwise = Nodo y (insertar x izq) der -- Menores a la izquierda
+    | x == y = Nodo y izq der
+    | x > y  = Nodo y izq (insertar x der)
+    | otherwise = Nodo y (insertar x izq) der
 
--- ALGORITMOS DE BORRADO (Complejo)
+-- ALGORITMOS DE BORRADO 
 -- Elimina un elemento del árbol manteniendo la estructura BST
 eliminar :: Ord a => a -> Arbol a -> Arbol a
 eliminar _ Hoja = Hoja
@@ -40,11 +40,11 @@ eliminar x (Nodo y izq der)
     | x > y     = Nodo y izq (eliminar x der)
     | otherwise = borrarRaiz (Nodo y izq der) -- Encontramos el nodo a borrar
 
--- Función auxiliar para manejar los casos de borrado (0, 1 o 2 hijos)
+-- Función auxiliar para manejar los casos de borrado
 borrarRaiz :: Ord a => Arbol a -> Arbol a
-borrarRaiz (Nodo _ Hoja der) = der  -- Caso 1: Solo hijo derecho (o hoja)
-borrarRaiz (Nodo _ izq Hoja) = izq  -- Caso 2: Solo hijo izquierdo
-borrarRaiz (Nodo _ izq der)  =      -- Caso 3: Dos hijos
+borrarRaiz (Nodo _ Hoja der) = der  -- Solo hijo derecho (o hoja)
+borrarRaiz (Nodo _ izq Hoja) = izq  -- Solo hijo izquierdo
+borrarRaiz (Nodo _ izq der)  =      -- Dos hijos
     let (minimo, nuevaDer) = extraerMinimo der -- Buscamos el menor del lado derecho
     in Nodo minimo izq nuevaDer
 
@@ -56,7 +56,7 @@ extraerMinimo (Nodo x izq der) =
     in (min, Nodo x nuevaIzq der)
 
 -- CONSULTAS Y RECORRIDOS
--- Calcula la altura (profundidad máxima) del árbol
+-- Calcula la altura del árbol
 altura:: Arbol a -> Int
 altura Hoja = 0
 altura (Nodo _ izq der) = 1 + max (altura izq) (altura der)
@@ -66,7 +66,7 @@ cantidadNodos :: Arbol a -> Int
 cantidadNodos Hoja = 0
 cantidadNodos (Nodo _ izq der) = 1 + cantidadNodos izq + cantidadNodos der
 
--- Busca un elemento en el árbol (eficiencia O(log n) si está balanceado)
+-- Busca un elemento en el árbol
 buscar:: Ord a => a -> Arbol a -> Bool
 buscar x Hoja = False
 buscar x (Nodo y izq der)
