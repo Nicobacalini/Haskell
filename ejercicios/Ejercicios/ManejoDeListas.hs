@@ -67,11 +67,11 @@ masDe n (x:xs)
   | length x > n = x : masDe n xs
   | otherwise    = masDe n xs
 
--- Ejercicio 7: Listas por Comprensión (Basico)
+-- Ejercicio 7: Listas por Comprensión 
 scalarproduct :: [Int] -> [Int] -> Int
 scalarproduct xs ys = sum [ x * y | (x, y) <- zip xs ys ]
 
--- Ejercicio 8: Listas por Comprensión (Avanzado)
+-- Ejercicio 8: Listas por Comprensión 
 -- A
 divisors :: Int -> [Int]
 divisors x 
