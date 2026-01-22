@@ -67,7 +67,6 @@ esVocalypar :: (Int,Char) -> Bool
 esVocalypar (n,c) = (n `mod` 2 == 0) && (c `elem` "aeiou")
 
 -- Ejercicio 3: Pattern Matching y Guardas
--- Nota: 'id' ya existe en Prelude, esta es una redefinición educativa
 miId :: a -> a
 miId x = x
 
