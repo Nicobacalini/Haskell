@@ -57,7 +57,7 @@ insertionSort :: Ord a => [a] -> [a]
 insertionSort [] = []
 insertionSort (x:xs) = insert x (insertionSort xs)
 
--- Bubble Sort (O(n^2)) - Método Burbujeo
+-- Bubble Sort (O(n^2))
 -- Realiza una pasada de burbujeo intercambiando adyacentes
 burbujeo :: Ord a => [a] -> ([a], Bool)
 burbujeo [] = ([], False)
